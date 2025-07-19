@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nursing Informatics Web Solutions</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: white;
+      color: #333;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 1rem;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #0077b6;
+    }
+    header img {
+      width: 180px;
+      height: auto;
+      display: block;
+      margin: 0 auto 1rem auto;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    nav {
+      background-color: #008000;
+      padding: 1rem 0;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    nav a {
+      color: white;
+      margin: 0 1.5rem;
+      font-weight: bold;
+      font-size: 1.1rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    nav a:hover {
+      color: #caf0f8;
+    }
+    section {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      display: none;
+    }
+    section.active {
+      display: block;
+    }
+    h2 {
+      color: #023e8a;
+    }
+    ul.services-list {
+      list-style-type: disc;
+      margin-left: 1.5rem;
+    }
+    form label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+    form button {
+      margin-top: 1.5rem;
+      background-color: #0077b6;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="C:\Users\PC8\Downloads\logo.png.png" alt="Nursing Informatics Logo" />
+    <h1>Nursing Informatics Web Solutions</h1>
+  </header>
+
+  <nav>
+    <a data-section="home">Home</a>
+    <a data-section="services">Services</a>
+    <a data-section="about">About</a>
+    <a data-section="contact">Contact</a>
+  </nav>
+
+  <section id="home" class="active">
+    <h2>Welcome</h2>
+    <p>We provide cutting-edge digital solutions tailored for healthcare professionals and nursing informatics experts to improve patient outcomes and streamline workflows.
+
+Our dedicated team combines expertise in healthcare and technology to deliver innovative tools that empower clinical decision-making and optimize operational efficiency.
+
+From secure EMR integration to customized analytics dashboards, we are committed to enhancing healthcare through technology-driven solutions.
+
+By partnering with us, healthcare organizations gain access to HIPAA-compliant platforms that ensure data privacy and security without compromising functionality.
+
+We believe in transforming complex healthcare challenges into simple, user-friendly digital experiences that support nurses, clinicians, and administrators every day.</p>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <ul class="services-list">
+      <li>Custom Web Development tailored for healthcare professionals</li>
+      <li>HIPAA-Compliant Platforms to ensure data security</li>
+      <li>EMR/EHR Integration for seamless clinical workflows</li>
+      <li>Analytics & Dashboards designed for nursing informatics experts</li>
+    </ul>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>We are a specialized team of developers and informatics consultants who understand both healthcare and technology. Our mission is to empower nurses, clinicians, and healthcare leaders with digital tools that improve care, decision-making, and outcomes.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form action="mailto:info@nursinginformatics.dev" method="post" enctype="text/plain">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <script>
+    const links = document.querySelectorAll('nav a');
+    const sections = document.querySelectorAll('section');
+
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        const target = link.getAttribute('data-section');
+        sections.forEach(section => {
+          if (section.id === target) {
+            section.classList.add('active');
+          } else {
+            section.classList.remove('active');
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+
+
